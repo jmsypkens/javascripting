@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- programmer: Jerry Sypkens 
+     descripting: calculator
+--> 
+
+<html>
+<head>
+    <title>eCalculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     
+</head>
+
+<body>
+<div class="container-fluid text-center">
+
+    <h1 id="My Calculator">Easy Calculator</h1>
+    
+    
+        <div class="row">
+            <div id="viewer" class="viewer">0</div>
+        </div>
+        
+        <div class="row">
+           <button id="reset" class="reset">Reset Universe?</button>
+           <button data-ops="divided by" class="ops">/</button>
+           
+            
+        </div>
+        
+        <div class="row">
+            <button class="btn btn-primary num" value="seven" id="seven" data-num="7">7</button>
+            <button class="btn btn-primary num" value="eight" id="eight" data-num="8">8</button>
+            <button class="btn btn-primary num" value="nine" id="nine" data-num="9">9</button>
+            <button class="btn btn-danger" value="multiply" id="multiply" data-ops="times" class="ops">X</button>
+        </div>
+    
+        <div class="row">
+            <button class="btn btn-primary num" value="four" id="four" data-num="4">4</button>
+            <button class="btn btn-primary num" value="five" id="five" data-num="5">5</button>
+            <button class="btn btn-primary num" value="six" id="six" data-num="6">6</button>
+            <button class="btn btn-danger" value="subtract" id="subtract" data-ops="minus" class="ops"><strong>-</strong></button>
+        </div> 
+        
+        <div class="row">
+            <button class="btn btn-primary num" value="one" data-num="1">1</button>
+            <button class="btn btn-primary num" value="two" data-num="2">2</button>
+            <button class="btn btn-primary num" value="three" data-num="3">3</button>
+            <button class="btn btn-danger" value="add" id="add" data-ops="plus" class="ops"><strong>+</strong></button>
+        </div> 
+        
+        <div class="row">
+            <button class="btn btn-primary num" value="zero" id="zero" data-num="0">ZERO</button>
+            <button class="btn btn-primary" value="point" id="point" data-num="."><strong>.</strong></button>
+            <button class="btn btn-success" value="equals" id="equals" class="equals" data-result=""><strong>=</strong></button>
+        </div>
+</div>
+
+<script>
+    function calcTotal() {
+        var one = 1;
+        var two = 2;
+        var three = 3; 
+        var four = 4;
+        var five = 5;
+        var six = 6;
+        var seven = 7;
+        var eight = 8;
+        var nine = 9;
+        var zero = 0; 
+        var multiply = '*';
+        var subtract = '-';
+        var add = '+';
+        var equals = '=';
+        var point = '.';
+        
+        
+        
+    }
+    
+</script>
+
+
+</body>
+</html>
