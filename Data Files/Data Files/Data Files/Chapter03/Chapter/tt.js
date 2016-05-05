@@ -38,15 +38,38 @@ var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "hom
             } while (1 <= 31);
     }
     
+// function to place opponents and gameLocation values in second p element within each table 
+// data cell that has an id 
+
+    function addGameInfo() {
+        var paragraphs = "";
+        
+            for (var i = 0; i < 31; i++) {
+                var date = i + 1; 
+                var tableCell = document.getElementById("08-" + date); 
+                
+                paragraphs = tableCell.getElementsByTagName("p"); 
+                
+                if (gameLocation[i] === "away") {
+                    paragraphs[1].innerHTML = "@ ";
+                }
+                
+                if (gameLocation[i] === "home") {
+                    paragraphs[1].innerHTML = "vs ";
+                }
+                
+                paragraphs[1].innerHTML += opponents[i]; 
+            }
+    }
+    
 // function to create calendar
 
     function createCalendar() {
         addColumnHeaders();
         addCalendarDates();
+        addGameInfo();
     }
 
 // runs createCalendar() function when page loads 
 
 window.addEventListener("load", createCalendar, false); 
-
-

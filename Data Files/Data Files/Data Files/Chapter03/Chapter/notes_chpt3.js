@@ -38,3 +38,12 @@
     for (var count = 0; count < cooldudes.length; count++) {
         document.write(cooldudes[count] + "<br />"); 
     }
+    
+// 4. Continue Statements
+
+    for (var count = 1; count <= 5; count++) {
+        if (count === 3) {
+            continue; 
+        }
+        document.write("<p>" + count + "</p>"); 
+    }
