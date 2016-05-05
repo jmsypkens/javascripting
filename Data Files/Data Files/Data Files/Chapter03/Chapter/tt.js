@@ -1,15 +1,18 @@
+// our global variables
+
 var daysofWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 
 var opponents = ["Lightning", "Combines", "Combines", "Combines",
-"Lightning", "Lightning", "Lightning", "Lightning",
-"Barn Raisers", "Barn Raisers", "Barn Raisers",
-"Sodbusters", "Sodbusters", "Sodbusters",
-"Sodbusters", "(off)", "River Riders", "River Riders", "River Riders",
-"Big Dippers", "Big Dippers", "Big Dippers", "(off)", "Sodbusters", "Sodbusters", 
-"Sodbusters", "Combines", "Combines", "Combines", "(off)", "(off)"]; 
+    "Lightning", "Lightning", "Lightning", "Lightning",
+    "Barn Raisers", "Barn Raisers", "Barn Raisers",
+    "Sodbusters", "Sodbusters", "Sodbusters",
+    "Sodbusters", "(off)", "River Riders", "River Riders", "River Riders",
+    "Big Dippers", "Big Dippers", "Big Dippers", "(off)", "Sodbusters", "Sodbusters", 
+    "Sodbusters", "Combines", "Combines", "Combines", "(off)", "(off)"]; 
 
-var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "home", "home", "home", "home", "away",
-"away", "away", "away", "", "away", "away", "away", "away", "away", "away", "", "home", "home", "home", "home", "home", "home", "", ""];
+var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "home", 
+    "home", "home", "home", "away", "away", "away", "away", "", "away", "away", 
+    "away", "away", "away", "away", "", "home", "home", "home", "home", "home", "home", "", ""];
 
 // This function places daysOfWeek values in header row cells
 
@@ -17,9 +20,8 @@ var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "hom
         var i = 0; 
         
         while (i < 7) {
-            document.getElementsByTagName("th")[i].innerHTML = 
-                daysofWeek[i];
-                i++;
+            document.getElementsByTagName("th")[i].innerHTML = daysofWeek[i];
+            i++;
         }
     }
     
@@ -48,16 +50,24 @@ var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "hom
                 var date = i + 1; 
                 var tableCell = document.getElementById("08-" + date); 
                 
-                paragraphs = tableCell.getElementsByTagName("p"); 
+                paragraphs = tableCell.getElementsByTagName("p");
                 
-                if (gameLocation[i] === "away") {
+                /* if (gameLocation[i] === "away") {
                     paragraphs[1].innerHTML = "@ ";
                 }
                 
                 if (gameLocation[i] === "home") {
                     paragraphs[1].innerHTML = "vs ";
-                }
+                } */ 
                 
+                switch (gameLocation[i]) {
+                    case "away":
+                        paragraphs[1].innerHTML = "@ ";
+                        break; 
+                    case "home": 
+                        paragraphs[1].innerHTML = "vs ";
+                        break;
+                }
                 paragraphs[1].innerHTML += opponents[i]; 
             }
     }
@@ -65,11 +75,15 @@ var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "hom
 // function to create calendar
 
     function createCalendar() {
+        addGameInfo();
         addColumnHeaders();
         addCalendarDates();
-        addGameInfo();
     }
 
 // runs createCalendar() function when page loads 
 
-window.addEventListener("load", createCalendar, false); 
+if (window.addEventListener) {
+        window.addEventListener("load", createCalendar, false); 
+} else if (window.attachEvent) {
+        window.attachEvent("onload", createCalendar); 
+}
