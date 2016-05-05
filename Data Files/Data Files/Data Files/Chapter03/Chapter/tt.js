@@ -1,4 +1,4 @@
-var daysofWeek = ["Sunday", "Monday", "FoolsDay", "Wednesday", "Thursday", "Friday", "Saturday"]; 
+var daysofWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 
 var opponents = ["Lightning", "Combines", "Combines", "Combines",
 "Lightning", "Lightning", "Lightning", "Lightning",
@@ -22,7 +22,31 @@ var gameLocation = ["away", "away", "away", "away", "home", "home", "home", "hom
                 i++;
         }
     }
+    
+// function to place day of month value in first p element
+// within each table data cell that has an id
 
-// runs addColumnHeaders() function when page loads 
+    function addCalendarDates() {
+        var i = 1; 
+        var paragraphs = "";
+        
+            do {
+                var tableCell = document.getElementById("08-" + i);
+                paragraphs = tableCell.getElementsByTagName("p");
+                paragraphs[0].innerHTML = i; 
+                i++; 
+            } while (1 <= 31);
+    }
+    
+// function to create calendar
 
-window.addEventListener("load", addColumnHeaders(), false); 
+    function createCalendar() {
+        addColumnHeaders();
+        addCalendarDates();
+    }
+
+// runs createCalendar() function when page loads 
+
+window.addEventListener("load", createCalendar, false); 
+
+

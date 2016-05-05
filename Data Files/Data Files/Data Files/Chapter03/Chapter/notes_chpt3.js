@@ -26,3 +26,15 @@
     }
     document.write("<p>Houston, we have liftoff!</p>")
     
+// 3. For statements 
+/* 
+    for (counter_declaration; condition; counter_operation) {
+        statements 
+    }
+*/ 
+
+    var cooldudes = ["Michael Jordan", "Steve Jobs", "Muhammad Ali", "Elon Musk", "Erlich Bachman"];
+    
+    for (var count = 0; count < cooldudes.length; count++) {
+        document.write(cooldudes[count] + "<br />"); 
+    }
