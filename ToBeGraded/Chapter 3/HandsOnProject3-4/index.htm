@@ -56,7 +56,7 @@
         function processInput() { 
                 if (i <= 5) {
                     listItem = document.getElementById("item".concat(i)); 
-                    listItem.innerHTML = document.getElementById("toolBox").value; 
+                    listItem = document.getElementById("toolBox").innerHTML;
                     document.getElementById("toolBox").innerHTML = ""; 
                     
                     
