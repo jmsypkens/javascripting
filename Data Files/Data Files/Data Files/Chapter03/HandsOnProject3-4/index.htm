@@ -57,12 +57,13 @@
                 if (i <= 5) {
                     listItem = document.getElementById("item".concat(i)); 
                     listItem.innerHTML = document.getElementById("toolBox").value; 
+                   
                     document.getElementById("toolBox").innerHTML = ""; 
-                    
                     
                     if (i === 5) {
                         document.getElementById("resultsExpl").innerHTML = "Thank you for your suggestions.";
                     }
+                
                     i++;
                 }
                 

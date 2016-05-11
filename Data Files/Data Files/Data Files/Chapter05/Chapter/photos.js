@@ -14,16 +14,34 @@
 
 /* global variables */
 var photoOrder = [1,2,3,4,5];
+var autoAdvance = setInterval(rightAdvance, 5000);
+var figureCount = 3; 
+
+function populateFigures() {
+   var filename; 
+   var currentFig;
+   
+   if (figureCount === 3) {
+      
+   }
+}
 
 /* shift all images one figure to the left, and change values in photoOrder array to match  */
 function rightArrow() {
+   clearInterval(autoAdvance);
+   rightAdvance();
+}
+
+
+// check this -->
+function rightAdvance() {
    for (var i = 0; i < 5; i++) {
-      if ((photoOrder[i] + 1) === 6) {
-         photoOrder[i] = 1;
-      } else {
-         photoOrder[i] += 1;
-      }
-      populateFigures();
+       if ((photoOrder[i] + 1) === 0) {
+         photoOrder[i] = 1; 
+       } else {
+          photoOrder += 1;
+       }
+        populateFigures();
    }
 }
 

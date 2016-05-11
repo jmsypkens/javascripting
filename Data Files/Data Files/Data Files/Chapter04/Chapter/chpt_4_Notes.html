@@ -1,0 +1,74 @@
+    <!-- Javascript error types
+    ========================================== --> 
+
+    <!-- 1. Syntax errors:
+            When the interpreter fails to recognize code. 
+            
+            ex. --> 
+            <script>
+                document.wtir("Hello World"); //mispelling of document.write
+            </script>    
+            
+            
+   <!-- 2. Run-Time Errors:
+            When interpreter encounters program with code it is trying to execute.
+            
+            ex. If you call a function and that function has not been created. 
+    
+    3. Logic Errors
+            When a flaw in the design of a program prevents it from running as
+            anticipated. Logic refers to the exectution of program statements and 
+            procedures in the correct order to produce the desired results. 
+            
+            ex. --> 
+            <script>
+                var multiplicationResult = 10 / 3; // should be a ('*')
+                document.write("Ten multiplied by three is " + 
+                    multiplicationResult); 
+            </script>
+            
+    <!-- DEBUGGING METHODS 
+    ========================================== --> 
+    
+    <!-- window.alert() Debugging method 
+        1. Use window.alert("//insert variable, array or value returned from 
+            function") in different points in your program to display
+            values as they change during program execution. Ex: --> 
+            
+            <script>
+                function addNumbers(a,b) {
+                    var result = a - b;
+                window.alert(result); // checks value of result and shows incorrect    
+                    return result; 
+                }   
+            
+                addNumbers(200, 300); 
+            </script>
+            
+       <!-- console.log() Debugging method 
+        2. Use console.log("//insert value") Can log a string, variable or 
+        combination of the two. Ex: --> 
+            
+            <script>
+                function calcPay(a,b) {
+                    var payRate = a; 
+                    var numHours = b; 
+                    var grossPay = payRate * numHours; 
+                console.log("grossPay is: " + grossPay) // note indentation
+                    return grossPay; 
+                }
+                
+                calcPay(50, 40); 
+            </script>
+            
+        <!-- 3. using /* test */ to comment out code --> 
+        
+        
+        <!-- Programming Concept: Dependencies 
+            Any program longer than a handful of statements that depend on
+            the successful execution of other statments or functions. --> 
+            
+        <!-- Reporting Bugs 
+            Do: - Describe in detail the steps required to produce the error.
+                - Describe the expected results from steps and what you observed instead. 
+                - Provide exact text of any error message. --> 
