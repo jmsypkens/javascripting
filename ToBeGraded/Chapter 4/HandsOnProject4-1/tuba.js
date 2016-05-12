@@ -1,6 +1,6 @@
 /*    JavaScript 6th Edition
  *    Chapter 4
- *    Chapter case
+ *    Hands On Project 4-1 
 
  *    Tuba Farm Equipment
  *    Variables and functions
