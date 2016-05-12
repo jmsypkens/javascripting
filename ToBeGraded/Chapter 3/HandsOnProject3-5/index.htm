@@ -4,7 +4,7 @@
    <!--
       JavaScript 6th Edition
       Chapter 3
-      Hands-on Project 3-4
+      Hands-on Project 3-5
 
       Author: Jerry Sypkens
       Date:   5/04/2016
@@ -21,7 +21,7 @@
 <body>
    <header>
       <h1>
-         Hands-on Project 3-4
+         Hands-on Project 3-5
       </h1>
    </header>
 
@@ -52,13 +52,12 @@
         //global variables 
         var i = 1;
         var listItem = ""; 
-        
+    
         function processInput() { 
             
-                if (i <= 5) {
-                    listItem = "item"+i; 
-                    document.getElementById(listItem).innerHTML=document.getElementById("toolBox").value;
-                    //  = document.getElementById("toolBox").innerHTML;
+                /* if (i <= 5) {
+                    listItem = "item" + i; 
+                    document.getElementById(listItem).innerHTML = document.getElementById("toolBox").value;
                     document.getElementById("toolBox").innerHTML = ""; 
                     
                     
@@ -66,8 +65,24 @@
                         document.getElementById("resultsExpl").innerHTML = "Thank you for your suggestions.";
                     }
                     i++;
+                } */ 
+                
+                switch(i <= 5) {
+                    
+                    case true: 
+                        listItem = "item" + i; 
+                        document.getElementById(listItem).innerHTML = document.getElementById("toolBox").value;
+                        document.getElementById("toolBox").innerHTML = ""; 
+                        break; 
+                    
+                    case 5: 
+                        document.getElementById("resultsExpl").innerHTML = "Thank you for your suggestions.";
+                        break; 
                 }
+                    i++; 
         }  
+        
+        
         // backward compatible event listener to Submit button
                 var submitButton = document.getElementById("button");
                 if (submitButton.addEventListener) {

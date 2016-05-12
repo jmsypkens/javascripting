@@ -1,0 +1,212 @@
+    <!-- Javascript error types
+    ========================================== --> 
+
+    <!-- 1. Syntax errors:
+            When the interpreter fails to recognize code. 
+            
+            ex. --> 
+            <script>
+                document.wtir("Hello World"); //mispelling of document.write
+            </script>    
+            
+            
+   <!-- 2. Run-Time Errors:
+            When interpreter encounters program with code it is trying to execute.
+            
+            ex. If you call a function and that function has not been created. 
+    
+        3. Logic Errors
+            When a flaw in the design of a program prevents it from running as
+            anticipated. Logic refers to the exectution of program statements and 
+            procedures in the correct order to produce the desired results. 
+            
+            ex. --> 
+            <script>
+                var multiplicationResult = 10 / 3; // should be a ('*')
+                document.write("Ten multiplied by three is " + 
+                    multiplicationResult); 
+            </script>
+            
+    <!-- DEBUGGING METHODS 
+    ========================================== --> 
+    
+    <!-- window.alert() Debugging method 
+        1. Use window.alert("//insert variable, array or value returned from 
+            function") in different points in your program to display
+            values as they change during program execution. Ex: --> 
+            
+            <script>
+                function addNumbers(a,b) {
+                    var result = a - b;
+                window.alert(result); // checks value of result and shows incorrect    
+                    return result; 
+                }   
+            
+                addNumbers(200, 300); 
+            </script>
+            
+       <!-- console.log() Debugging method 
+        2. Use console.log("//insert value") Can log a string, variable or 
+        combination of the two. Ex: --> 
+            
+            <script>
+                function calcPay(a,b) {
+                    var payRate = a; 
+                    var numHours = b; 
+                    var grossPay = payRate * numHours; 
+                console.log("grossPay is: " + grossPay) // note indentation
+                    return grossPay; 
+                }
+                
+                calcPay(50, 40); 
+            </script>
+            
+        <!-- 3. using /* test */ to comment out code --> 
+        
+        
+        <!-- Programming Concept: Dependencies 
+            Any program longer than a handful of statements that depend on
+            the successful execution of other statments or functions. --> 
+            
+        <!-- Reporting Bugs 
+            Do: - Describe in detail the steps required to produce the error.
+                - Describe the expected results from steps and what you observed instead. 
+                - Provide exact text of any error message. --> 
+                
+        <!-- Exception Handling:
+            Allows a program to handle errors, or exceptions as they occur in
+            the execution of a program. 
+            
+            Exception handling statements: 
+                - try
+                - throw 
+                - catch
+                - finally
+                
+            Try Example Code:
+                try {
+                    statements;
+                }
+                
+            If the results of evaluating statements is an error, the result of
+            diving a number by 0, then an error is triggered, or thrown. 
+            
+            In addition, you can test a condition within a  statements, 
+            then add a throw statement to specify an error message if the 
+            result is false. 
+            
+            Try & Throw Example Code: 
+            
+                try {
+                var lastName = document.getElementById("lName").value;
+                
+                    if (lastName === "") { // if lastName is blank 
+                        throw "Please enter your last name.";
+                    } 
+                }
+            
+            Catching Exceptions 
+            After you throw an error, you use a catch() statment to handle 
+            the error. 
+                
+                catch(error) {
+                    statements;
+                }
+                
+            
+                catch(lNameError) {
+                    window.alert(lNameError);
+                    return false; 
+                }
+                
+            Whenever a try statement throws an exception, the Javascript 
+            interpreter executes the nearest catch statment. 
+            
+            Finally Statments
+            These statements execute regardless of whether its associated 
+            try block throws an exception. Normally this is used to perform
+            cleanup or any necessary tasks after code is evaluated with a 
+            try statement. The syntax: 
+                
+                finally {
+                    statements;
+                }
+                
+            Using try, throw, catch and finally together to evaluate
+            the first name value: 
+            
+                function validateName() {
+                    
+                    try { 
+                        var = lastName = getElementById("lName");
+                        if (lastName.value === "") {
+                            throw "Please enter your last name."; 
+                        }
+                    }
+                    
+                    catch(lNameError) {
+                        window.alert(lNameError)
+                        return false; 
+                    }
+                    
+                    finally { 
+                        lNameValid = true; 
+                    }
+                    
+                    return true; 
+                }    
+                
+            Custom Error Handling
+            
+            Code to handle errors on page: 
+            
+            if (window.addEventListener) {
+                window.addEventListener("error", processErrors, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onerror", processErrors);
+            }
+                
+                
+            To override browser error handling functionality: 
+            
+            function processErrors() { 
+                custom error handling code
+                return true; 
+            }
+            
+            Creating an error event function does not fix errors in your 
+            Javascript programs. 
+            
+            Custom Error Handling Functions: -->
+            
+            <script>
+                function processErrors(errMessage, errURL, errLineNum) {
+                    console.log("The file " + errURL 
+                        + " generated the following error(s): " + errMessage 
+                        + " on line" + errLineNum); 
+                    return true; 
+                }
+                
+                if (window.addEventListener) {
+                    window.addEventListener("error", processErrors, false); 
+                } else if (window.attachEvent) {
+                    window.attachEvent("onerror", processErrors); 
+                } 
+            </script>
+            
+            <!-- Additional Debugging Techniques 
+            ========================================= 
+            1. Check HTML Elements for syntax. 
+            2. W3C Markup Validation Service (validator.w3.org) 
+            3. Analyze Logic of program 
+            4. Test statements with your console command line 
+            5. Typing "Debugger" in your code acts like a 'breakpoint' 
+            6. Using 'Strict Mode' (some dev's use this at all times for bullet
+                proof code) 
+            7. Using jsLint. Works similar to strict mode but reports line nums
+                of errors for each flagged issue. 
+            8. Reload your webpage by closing it to clear mem. 
+            
+            --> 
+        
+            
