@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Web Site Registration Form</title>
+<meta http-equiv="content-type" content="text/html;
+charset=iso-8859-1" />
+<link rel="stylesheet" href="js_styles.css" type="text/css" />
+<script type="text/javascript">
+/* <![CDATA[ */
+
+/* ]]> */
+</script>
+</head>
+<body>
+<h1>Web Site Registration Form</h1>
+<h2>Personal Information</h2>
+<form action="FormProcessor.html" method="get"
+enctype="application/x-www-form-urlencoded"
+onsubmit="return confirmSubmit();"
+onreset="return confirmReset();">
+<p>Name</p>
+<p><input type="text" name="name" size="50" value="Enter your name" onclick="this.value=''" /><br /> </p>
+<p>E-mail address</p>
+<p><input type="text" name="email" size="50" value="Enter your e-mail address" onclick="this.value=''" /></p>
+<h2>Security Information</h2>
+<p>Enter a password that you can use to manage your subscription
+online</p>
+<p><input type="password" name="password" size="50" onchange="ensurePasswordConfirm();" /></p>
+<p>Type the password again to confirm it</p>
+<p><input type="password" name="password_confirm" size="50" onblur="confirmPassword();" /></p>
+<p>Security question</p>
+<p><select name="challenge_question">
+<option value="none">[select a security question]</option>
+<option value="mom">What is your mother's maiden name?</option>
+<option value="pet">What is the name of your pet?</option>
+<option value="mom">What is your favorite color?</option>
+</select></p>
+<p>Your answer</p>
+<p><input type="text" name="challenge_answer" size="50" /></p>
+<h2>Preferences</h2>
+<p>Send special offers to my e-mail address <input type="radio" name="special_offers"
+     value="offers_yes" />Yes
+     <input type="radio" name="special_offers"
+     value="offers_no" />No</p>
+<p>Select areas of interest (select at least one)</p>
+<p><input type="checkbox" name="interests"
+     value="entertainment" />Entertainment<br />
+<input type="checkbox" name="interests"
+     value="business" />Business<br />
+<input type="checkbox" name="interests"
+     value="music" />Music<br />
+<input type="checkbox" name="interests"
+     value="shopping" />Shopping<br />
+<input type="checkbox" name="interests"
+     value="travel" />Travel</p>
+<p><input type="submit" /><input type="reset" /></p>
+</form>
+</body>
+</html>

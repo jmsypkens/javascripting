@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+    <title>Practice Page</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+    crossorigin="anonymous">
+    <style type="text/css">
+    
+    body {
+        width: 960px;
+        background-color:#3C71E5;
+        margin: 0 auto;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    #blueBox {
+        width: 500px;
+        padding: 25px;
+        border: 5px solid #00C7E3;
+        margin: 10px;
+        color: #F2F2F2;
+        background-color:  #00C7E3;
+    }
+    
+    #feedBox {
+        width: 500px;
+        padding: 25px;
+        border: 5px solid #A63345;
+        margin: 10px;
+        color: #F2F2F2;
+        background-color: #A63345;
+    }
+    
+    </style>   
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1 style="padding: 25px; color: #F24405">Random Thought Wall >></h1>
+            
+        </header>
+        
+        <div id="blueBox">
+            <article>
+            <h2>Your Random Thought</h2>
+                <form>
+                  <fieldset>
+                    <label for="instructions" id="instructions">Enter your random thought to the wall:</label>
+                    <textarea class="form-control" rows="3" id="userInput" style="color: #F24405"></textarea>
+                  </fieldset>
+                  <br /> 
+                  <fieldset>
+                      <label for="name" id="name">User Name:</label><br /> 
+                      <input id="user" style="color: #F24405" /> 
+                  </fieldset>
+                  <br />
+                  <fieldset>
+                    <button type="button" id="btn" class="btn btn-primary btn-block" />Submit</button>
+                  </fieldset>
+                </form>
+            </article>
+        </div>
+        
+        <div id="feedBox">
+            <ul>
+                <h3>Random Thoughts</h3>
+                
+                <h5 id="thoughtNum1"></h5>
+                <p id="userName1"></p>
+                <p id="date1"></p>
+                <li id="item1" style="list-style-type:none"></li><br />
+                
+                <h5 id="thoughtNum2"></h5>
+                <p id="userName2"></p>
+                <p id="date2"></p>
+                <li id="item2" style="list-style-type:none"></li><br />
+                
+                <h5 id="thoughtNum3"></h5>
+                <p id="userName3"></p>
+                <p id="date3"></p>
+                <li id="item3" style="list-style-type:none"></li><br />
+                
+                <h5 id="thoughtNum4"></h5>
+                <p id="userName4"></p>
+                <p id="date4"></p>
+                <li id="item4" style="list-style-type:none"></li><br />
+                
+                <h5 id="thoughtNum5"></h5>
+                <p id="userName5"></p>
+                <p id="date5"></p>
+                <li id="item5" style="list-style-type:none"></li><br />
+
+            </ul>
+                <p id="resultsExpl"></p>
+        </div>
+        </div>
+        </div> 
+    </div>
+    
+    
+    <script>
+    
+        //global variables 
+        var i = 1;
+        var listItem = ""; 
+        var theUser = "";
+        // var userItem = ""; 
+        var d = new Date();
+        var newDate = "Date: " + d; 
+    
+        function processInput() { 
+            
+                if (i <= 5) {
+                    listItem = "item" + i; 
+                    theUser = "userName" + i; 
+                    
+                    // Outputs thought number 
+                    document.getElementById("thoughtNum" + i).innerHTML = "Thought Number " + i;
+                    
+                    // Outputs user number and name. 
+                    document.getElementById(theUser).innerHTML = "User " + i + ": " + document.getElementById("user").value ;
+
+                    // outputs Date
+                    document.getElementById("date" + i).innerHTML = newDate;
+                    
+                    // outputs user randomt thought 
+                    document.getElementById(listItem).innerHTML = document.getElementById("userInput").value;
+                    document.getElementById("userInput").innerHTML = ""; 
+                    
+                    
+                    if (i === 5) {
+                        // notifies end of inputs 
+                        document.getElementById("resultsExpl").innerHTML = "You have reached the end. Thank you for reading the wall!";
+                    }
+                    i++;
+                }
+        }  
+        // backward compatible event listener to Submit button
+                var submitButton = document.getElementById("btn");
+                if (submitButton.addEventListener) {
+                        submitButton.addEventListener("click", processInput, false);
+                    } else if (submitButton.attachEvent) {
+                        submitButton.attachEvent("onclick", processInput); 
+                    }
+        
+    </script>
+    
+    <!-- Bootstrap Script --> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+    crossorigin="anonymous"></script>
+</body>
+</html>
