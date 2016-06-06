@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Pi Calculator</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    
+    <body>
+        <div style="padding: 75px">
+          <h1 id="piSymbol">&#960  =</h1>
+          <h4 id="pi" type="number">3.141592653</h4>
+          <br /> 
+         
+            <h3 id="piHead">This is your favorite number multiplied by pi: </h3> 
+            <p id="piResult"></p>  
+          
+            <form id="piForm">
+              <fieldset> 
+                  <label value="favNumHead"> 
+                  Enter your favorite number between 1 and 1,000,000,000,000,000:</label> 
+                  <input id ="userNum" type="number" min="1" max="100000000000000" />
+                  <input id="submit" type="submit" name="submit" />
+              </fieldset>
+            </form> 
+        </div>
+       <script type="text/javascript" src="script.js"></script>
+    </body>
+</html> 

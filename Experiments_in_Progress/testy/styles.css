@@ -1,0 +1,49 @@
+/* Main Body / Master CSS */
+body {
+    background-color: #fff; 
+    max-width: 700px;
+}
+
+/* NavBar CSS */ 
+#navBar {
+    position: relative;
+}
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 215px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    text-align: left; 
+    display: block; 
+    width: 200px; 
+    color: #0074BC;
+    padding: 16px 0 8px 16px;
+    text-decoration: none; 
+}
+
+li a:hover {
+    background-color: #F97391;
+    color: #fff;
+}
+
+li a:hover:not(.active) {
+    background-color: #C3C9DA;
+    color: white;
+}
+
+/* MainBox CSS*/
+
+#mainBox { 
+    margin: 50px; 
+    height: 700px;
+    width: 700px;   
+    background-color: #C3C9DA; 
+    position: inherit;
+    
+}

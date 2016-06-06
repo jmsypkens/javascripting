@@ -1,6 +1,6 @@
 /*  JavaScript 6th Edition
-    Chapter 6
-    Hands-on Project 6-4
+    Chapter 7
+    Hands-on Project 7-4
 
     Filename: styles.css
 */
@@ -78,12 +78,14 @@ article {
    text-align: left;
    background: ivory;
    padding: 20px;
+   overflow: auto;
 }
 
 h2 {
    font-weight: bold;
    font-size: 30px;
    text-align: center;
+   width: 66.6667%;
 }
 
 #errorMessage {
@@ -102,6 +104,8 @@ h2 {
 /* form */
 form {
    padding: 10px;
+   width: 66.6667%;
+   float: left;
 }
 
 fieldset {
@@ -157,11 +161,11 @@ input, textarea {
 
 #deliveryinfo input {
    display: block;
-   margin-left: 130px;
+   margin-left: 135px;
 }
 
 #nameinput, #emailinput, #addrinput {
-   width: 30em;
+   width: 20em;
 }
 
 #cityinput, #phoneinput {
@@ -177,13 +181,59 @@ input, textarea {
    margin: 1em 0 0.5em 0;
 }
 
-#submitBtn {
+textarea {
+   margin-bottom: 1em;
+}
+
+#previewBtn {
    font-size: 1.25em;
 }
 
-#submitbutton {
+#previewbutton {
    background: inherit;
    border: none;
    padding: 0.5em 0 0 0;
    text-align: center;
+}
+
+section {
+   float: right;
+   width: 33.3333%;
+   background: white;
+   border: 3px solid #04819E;
+   margin-top: 10px;
+   display: none;
+}
+
+section h2 {
+   width: 100%;
+   background: #e3d5ba;
+   padding: 5px;
+}
+
+section div {
+   margin-left: 20px;
+   display: none;
+   padding: 10px;
+}
+
+section div p {
+   margin-bottom: 5px;
+}
+
+section div p span {
+   font-weight: bold;
+}
+
+section li {
+   list-style-type: none;
+   margin-left: 20px;
+}
+
+h3 {
+   font-family: arial, helvetica, sans-serif;
+   font-weight: bold;
+   font-size: 1.25em;
+   margin-top: 0.5em;
+   margin-left: 0.5em;
 }

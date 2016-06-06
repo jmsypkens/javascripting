@@ -1,0 +1,39 @@
+            body {
+              color: #588CEF;
+              background-color: #181843;
+              max-width: 720px; 
+              margin: 0 auto;
+            }
+            
+            #piSymbol { 
+              color: #C694AC;
+              font-size: 4em; 
+            }
+            
+            #pi {
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 2em; 
+            }
+            
+            #piForm {
+              font-family: Arial, Helvetica, sans-serif;
+              height: 55px;
+              width: 550px;
+            }
+            
+            #userNum {
+              margin: 15px;
+              width: 20em; 
+            }
+            
+            #piHead {
+              padding: 2px;
+            }
+            
+            #piResult { 
+               width: 20em;
+               font-size: 4.1em;
+               height: 1.4em;
+               padding: 0.1em;
+               margin: 0 auto;
+            }
